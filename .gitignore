@@ -11,7 +11,8 @@ xcuserdata/
 ## App packaging
 *.ipa
 *.dSYM.zip
-*.dSYM
+*.dSYM 
+.DS_Store
 
 ## Playgrounds
 timeline.xctimeline
