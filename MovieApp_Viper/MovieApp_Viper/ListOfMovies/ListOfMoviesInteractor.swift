@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol ListOfMoviesBussinessLogic  {
+       
+}
+
+class ListOfMoviesInteractor: ListOfMoviesBussinessLogic {
+    
+}
