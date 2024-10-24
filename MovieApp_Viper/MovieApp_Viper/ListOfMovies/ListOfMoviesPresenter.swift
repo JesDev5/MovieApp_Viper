@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol ListOfMoviesPresentationLogic {
+    
+}
+
+class ListOfMoviesPresenter: ListOfMoviesPresentationLogic {
+    
+}

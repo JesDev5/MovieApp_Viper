@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import UIKit
+
+protocol ListOfMoviesRoutingLogic: AnyObject {
+    
+}
+
+class ListOfMoviesRouter: ListOfMoviesRoutingLogic {
+    
+}
