@@ -12,5 +12,10 @@ protocol ListOfMoviesBussinessLogic  {
 }
 
 class ListOfMoviesInteractor: ListOfMoviesBussinessLogic {
+    var presenter: ListOfMoviesPresentationLogic
+    
+    init(presenter: ListOfMoviesPresentationLogic) {
+        self.presenter = presenter
+    }
     
 }

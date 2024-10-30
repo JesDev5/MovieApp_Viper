@@ -13,4 +13,10 @@ protocol ListOfMoviesPresentationLogic {
 
 class ListOfMoviesPresenter: ListOfMoviesPresentationLogic {
     
+    weak var viewController: ListOfMoviesDisplayLogic?
+    //esta creando una nueva instancia de la clase
+    init(viewController: ListOfMoviesDisplayLogic? = nil) {
+        self.viewController = viewController
+    }
+    
 }
