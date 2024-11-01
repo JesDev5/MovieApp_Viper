@@ -21,6 +21,6 @@ private enum CodingKeys: String, CodingKey {
         case title
         case overview
         case imageURL = "poster_path"
-        case votes
+        case votes = "vote_average"
     }
 
