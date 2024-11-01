@@ -8,5 +8,17 @@
 import Foundation
 
 struct PopularMovieEntity: Decodable {
-    
+    let id: Int
+    let title: String
+    let overview: String
+    let imageURL: String
 }
+
+
+private enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case overview
+        case imageURL = "poster_path"
+    }
+
