@@ -12,13 +12,13 @@ struct PopularMovieEntity: Decodable {
     let title: String
     let overview: String
     let imageURL: String
-}
+    let voteAverage: Double
 
-
-private enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id
         case title
         case overview
         case imageURL = "poster_path"
+        case voteAverage = "vote_average"
     }
-
+}
