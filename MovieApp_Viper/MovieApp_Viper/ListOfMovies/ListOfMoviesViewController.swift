@@ -15,10 +15,10 @@ protocol ListOfMoviesDisplayLogic: AnyObject {
 class ListOfMoviesViewController: UIViewController,
                                   ListOfMoviesDisplayLogic {
     
-    var interactor: ListOfMoviesBussinessLogic
+    var interactor: ListOfMoviesBusinessLogic
     var router: ListOfMoviesRoutingLogic
     
-    init(interactor: ListOfMoviesBussinessLogic, router: ListOfMoviesRoutingLogic) {
+    init(interactor: ListOfMoviesBusinessLogic, router: ListOfMoviesRoutingLogic) {
         self.interactor = interactor
         self.router = router
         super.init(nibName: nil, bundle: nil)
