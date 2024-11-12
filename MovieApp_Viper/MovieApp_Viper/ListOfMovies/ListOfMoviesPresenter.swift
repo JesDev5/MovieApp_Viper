@@ -12,11 +12,21 @@ protocol ListOfMoviesPresentationLogic {
 }
 
 class ListOfMoviesPresenter: ListOfMoviesPresentationLogic {
-    
     weak var viewController: ListOfMoviesDisplayLogic?
-    //esta creando una nueva instancia de la clase
-    init(viewController: ListOfMoviesDisplayLogic? = nil) {
+    var interactor: ListOfMoviesInteractor?
+    var popularMovieResponse: PopularMovieResponseEntity?
+    
+    init(viewController: ListOfMoviesDisplayLogic? = nil, interactor: ListOfMoviesInteractor?  = nil) {
         self.viewController = viewController
+        self.interactor = interactor
+        
+    
     }
     
+    func onViewAppear() {
+        Task {
+            popularMovieResponse = await interactor?.getListOfMovies()
+                
+        }
+    }
 }
