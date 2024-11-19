@@ -23,7 +23,7 @@ class ListOfMoviesViewController: UIViewController,
         self.interactor = interactor
         self.router = router
         super.init(nibName: nil, bundle: nil)
-        fatalError("init(coder:) has not been implemented")
+        
     }
 
     required init? (coder: NSCoder) {
@@ -33,6 +33,7 @@ class ListOfMoviesViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .blue
         presenter?.onViewAppear()
     }
     

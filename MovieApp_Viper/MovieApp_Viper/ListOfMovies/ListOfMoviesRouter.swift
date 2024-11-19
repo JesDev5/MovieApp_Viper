@@ -16,8 +16,8 @@ class ListOfMoviesRouter: ListOfMoviesRoutingLogic {
 
     weak var viewController:UIViewController?
     
-    static func createModule() -> UIViewController {
-        
+    func createModule(window: UIWindow?) {
+       
         let router = ListOfMoviesRouter()
         let presenter = ListOfMoviesPresenter()
         let interactor = ListOfMoviesInteractor(presenter: presenter)
@@ -26,6 +26,10 @@ class ListOfMoviesRouter: ListOfMoviesRoutingLogic {
         presenter.viewController = viewController
         router.viewController = viewController
         
-        return viewController
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+        
+      
     }
 }
+
