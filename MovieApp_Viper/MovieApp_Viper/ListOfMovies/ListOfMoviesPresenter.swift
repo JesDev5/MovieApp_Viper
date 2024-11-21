@@ -14,23 +14,20 @@ protocol ListOfMoviesPresentationLogic {
 class ListOfMoviesPresenter: ListOfMoviesPresentationLogic {
     
     weak var viewController: ListOfMoviesDisplayLogic?
-    var interactor: ListOfMoviesInteractor?
+    var interactor: ListOfMoviesInteractor
     var popularMovieResponse: PopularMovieResponseEntity?
 
-    
-    init(viewController: ListOfMoviesDisplayLogic? = nil, interactor: ListOfMoviesInteractor?  = nil) {
+    init(viewController: ListOfMoviesDisplayLogic? = nil, interactor: ListOfMoviesInteractor) {
         self.viewController = viewController
         self.interactor = interactor
-        
-    
     }
     
     func onViewAppear() {
         Task {
-            popularMovieResponse = await interactor?.getListOfMovies()
+            popularMovieResponse = await interactor.getListOfMovies()
+            guard let models: [PopularMovieEntity] = popularMovieResponse?.results as? [PopularMovieEntity] else { return }
+            viewController?.displayData(movies: models)
         }
-        guard let models: [PopularMovieEntity] = popularMovieResponse?.results as? [PopularMovieEntity] else { return }
-        viewController?.displayData(movies: models)
     }
 }
 

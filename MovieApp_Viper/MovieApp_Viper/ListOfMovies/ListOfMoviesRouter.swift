@@ -19,12 +19,12 @@ class ListOfMoviesRouter: ListOfMoviesRoutingLogic {
     func createModule(window: UIWindow?) {
        
         let router = ListOfMoviesRouter()
-        let presenter = ListOfMoviesPresenter()
-        let interactor = ListOfMoviesInteractor(presenter: presenter)
+        let interactor = ListOfMoviesInteractor()
+        let presenter = ListOfMoviesPresenter(interactor: interactor)
         let viewController = ListOfMoviesViewController(interactor: interactor, router: router)
-        
         presenter.viewController = viewController
         router.viewController = viewController
+        viewController.presenter = presenter
         
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
